@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoveToProve Dance Battle 2025 - Home</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: #000000;
+            min-height: 100vh;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(120, 119, 198, 0.6);
+            border-radius: 50%;
+            animation: float 6s linear infinite;
+        }
+
+        .particle:nth-child(2n) {
+            background: rgba(255, 119, 198, 0.6);
+            animation-duration: 8s;
+        }
+
+        .particle:nth-child(3n) {
+            background: rgba(120, 219, 255, 0.6);
+            animation-duration: 10s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Circular logo-inspired elements */
+        .logo-circle {
+            width: 200px;
+            height: 200px;
+            border: 3px solid #ffffff;
+            border-radius: 50%;
+            position: relative;
+            margin: 0 auto 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .logo-circle::before {
+            content: '';
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+        }
+
+        .logo-circle::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .logo-circle .bottom-dot {
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .dancer-silhouettes {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .dancer {
+            width: 40px;
+            height: 40px;
+            background: #ffffff;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .dancer::before {
+            content: '🕺';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            filter: grayscale(1) brightness(0);
+        }
+
+        .dancer:nth-child(2)::before {
+            content: '💃';
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .hero-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 4.5em;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes glow {
+            from { 
+                text-shadow: 0 0 20px rgba(120, 119, 198, 0.8), 0 0 40px rgba(120, 119, 198, 0.6);
+                filter: brightness(1);
+            }
+            to { 
+                text-shadow: 0 0 30px rgba(120, 119, 198, 1), 0 0 50px rgba(120, 119, 198, 0.8);
+                filter: brightness(1.2);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .register-btn {
+            display: inline-block;
+            background: #ffffff;
+            color: #000000;
+            padding: 20px 50px;
+            border: 3px solid #ffffff;
+            border-radius: 0;
+            font-size: 1.4em;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        .register-btn:hover {
+            background: #000000;
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        .battle-details {
+            margin: 80px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .detail-card {
+            background: #000000;
+            padding: 40px;
+            border: 2px solid #ffffff;
+            transition: all 0.3s ease;
+            position: relative;
+            animation: fadeInUp 1s ease-out both;
+        }
+
+        .detail-card:nth-child(1) { animation-delay: 0.2s; }
+        .detail-card:nth-child(2) { animation-delay: 0.4s; }
+        .detail-card:nth-child(3) { animation-delay: 0.6s; }
+        .detail-card:nth-child(4) { animation-delay: 0.8s; }
+
+        .detail-card:hover {
+            background: #ffffff;
+            color: #000000;
+            transform: translateY(-5px);
+        }
+
+        .detail-card h3 {
+            color: #ffffff;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .detail-card p {
+            color: #ffffff;
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+        .dance-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 30px;
+  background-color: #111; /* Dark background */
+}
+
+.dance-image {
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+}
+
+.dance-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  border-radius: 12px;
+}
+
+.dance-image:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+ 
+
+        .event-highlights {
+            background: #000000;
+            padding: 60px 40px;
+            margin: 80px 0;
+            border: 2px solid #ffffff;
+        }
+
+        .event-highlights h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .highlight-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .highlight-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(120, 119, 198, 0.8);
+        }
+
+        .highlight-item h4 {
+            color: #ffffff;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .highlight-item p {
+            color: #ffffff;
+            font-size: 1em;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3em;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.4em;
+            }
+            
+            .battle-details {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .dance-gallery {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated background particles -->
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="logo-circle">
+                <div class="dancer-silhouettes">
+                    <div class="dancer"></div>
+                    <div class="dancer"></div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 0.8em; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">MOVE TO PROVE</div>
+                    <div style="font-size: 1.2em; font-weight: 900; text-transform: uppercase; letter-spacing: 2px;">DANCE</div>
+                    <div style="font-size: 1.4em; font-weight: 900; text-transform: uppercase; letter-spacing: 3px;">BATTLE</div>
+                </div>
+                <div class="bottom-dot"></div>
+            </div>
+            <a href="Battle.html" class="register-btn">REGISTER NOW</a>
+        </section>
+
+        <!-- Battle Details -->
+        <section class="battle-details">
+            <div class="detail-card">
+                <h3>📍 Venue</h3>
+                <p>Ayany Primary School<br>Get ready to battle it out on the dance floor in this iconic location!</p>
+            </div>
+            <div class="detail-card">
+                <h3>🎯 Theme</h3>
+                <p>"Prove it on the floor - No talks just moves"<br>Let your dancing do the talking!</p>
+            </div>
+            <div class="detail-card">
+                <h3>⚔️ Categories</h3>
+                <p>1v1 Solo Battles & Crew vs Crew<br>Choose your battle format and show your skills!</p>
+            </div>
+            <div class="detail-card">
+                <h3>🏆 Prize Pool</h3>
+                <p>Amazing prizes await the winners!<br>Plus recognition in the dance community!</p>
+            </div>
+        </section>
+
+        <!-- Dance Gallery -->
+        <section class="dance-gallery">
+            <div class="dance-image">
+              <img src="12.jpg" alt="Dance Performance 1">
+            </div>
+            <div class="dance-image">
+              <img src="g2.jpg" alt="Dance Performance 2">
+            </div>
+            <div class="dance-image">
+              <img src="g1.jpg" alt="Dance Performance 3">
+            </div>
+            <div class="dance-image">
+              <img src="g3.jpg" alt="Dance Performance 4">
+            </div>
+            <div class="dance-image">
+              <img src="10.jpg" alt="Dance Performance 5">
+            </div>
+           
+            </div>
+          </section>
+          
+
+        <!-- Event Highlights -->
+        <section class="event-highlights">
+            <h2>Why Join MoveToProve?</h2>
+            <div class="highlights-grid">
+                <div class="highlight-item">
+                    <div class="highlight-icon">🎵</div>
+                    <h4>Live Music</h4>
+                    <p>Professional DJs spinning the hottest tracks</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">🏆</div>
+                    <h4>Competition</h4>
+                    <p>Battle against the best dancers in the city</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">👥</div>
+                    <h4>Community</h4>
+                    <p>Connect with fellow dancers and artists</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">📸</div>
+                    <h4>Media Coverage</h4>
+                    <p>Professional photography and video coverage</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">🎪</div>
+                    <h4>Entertainment</h4>
+                    <p>Full night of dance performances and battles</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">🌟</div>
+                    <h4>Recognition</h4>
+                    <p>Showcase your talent to the dance community</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="text-align: center; padding: 40px 20px; border-top: 2px solid #ffffff; margin-top: 60px;">
+            <p style="color: #ffffff; font-size: 1em; margin-bottom: 10px;">
+                © 2025 UNI Freelancers Foundation | All Rights Reserved |
+            </p>
+            <p style="color: #ffffff; font-size: 1em;">
+                unifreelancerscompany@gmail.com
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Create animated particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Initialize particles when page loads
+        document.addEventListener('DOMContentLoaded', createParticles);
+
+        // Add smooth scrolling for any internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

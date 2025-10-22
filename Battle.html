@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoveToProve Dance Battle 2025 - Registration</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: #000000;
+            min-height: 100vh;
+            padding: 20px;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #000000;
+            border: 2px solid #ffffff;
+            overflow: hidden;
+        }
+
+        .header {
+            background: #000000;
+            color: #ffffff;
+            padding: 50px 30px;
+            text-align: center;
+            position: relative;
+            border-bottom: 2px solid #ffffff;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(120, 119, 198, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(255, 119, 198, 0.4) 0%, transparent 50%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+        }
+
+        .header h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: 3.5em;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(120, 119, 198, 0.8), 0 0 20px rgba(120, 119, 198, 0.6); }
+            to { text-shadow: 0 0 20px rgba(120, 119, 198, 1), 0 0 30px rgba(120, 119, 198, 0.8); }
+        }
+
+        .header .subtitle {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #ffffff;
+            position: relative;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .event-info {
+            background: #000000;
+            padding: 40px 30px;
+            border-bottom: 2px solid #ffffff;
+        }
+
+        .event-info h2 {
+            color: #ffffff;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .info-item {
+            background: #000000;
+            padding: 25px;
+            border: 2px solid #ffffff;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .info-item:hover {
+            background: #ffffff;
+            color: #000000;
+            transform: translateY(-5px);
+        }
+
+        .info-item h3 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-item p {
+            color: #ffffff;
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+
+        .registration-form {
+            padding: 50px 30px;
+            background: #000000;
+        }
+
+        .registration-form h2 {
+            color: #ffffff;
+            margin-bottom: 40px;
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 12px;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1.2em;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 18px;
+            background: #000000;
+            border: 2px solid #ffffff;
+            font-size: 16px;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: #ffffff;
+            color: #000000;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .required {
+            color: #ffffff;
+        }
+
+        .submit-btn {
+            background: #ffffff;
+            color: #000000;
+            padding: 20px 50px;
+            border: 3px solid #ffffff;
+            font-size: 1.3em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .submit-btn:hover {
+            background: #000000;
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .success-message {
+            background: rgba(40, 167, 69, 0.2);
+            color: #4ade80;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            display: none;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+        }
+
+        .error-message {
+            background: rgba(220, 38, 38, 0.2);
+            color: #f87171;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            display: none;
+            border: 1px solid rgba(248, 113, 113, 0.3);
+            text-shadow: 0 0 10px rgba(248, 113, 113, 0.5);
+        }
+
+        /* Animated background elements */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle, rgba(120, 119, 198, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            animation: float 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-20px, -20px) rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .container {
+                margin: 10px;
+                border-radius: 20px;
+            }
+            
+            .registration-form {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>MoveToProve</h1>
+            <p class="subtitle">Dance Battle 2025</p>
+        </div>
+
+        <div class="event-info">
+            <h2>Event Details</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>📍 Venue</h3>
+                    <p>Ayany Primary School</p>
+                </div>
+                <div class="info-item">
+                    <h3>🎯 Theme</h3>
+                    <p>Prove it on the floor - No talks just moves</p>
+                </div>
+                <div class="info-item">
+                    <h3>⚔️ Categories</h3>
+                    <p>1v1 & Crew vs Crew</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="registration-form">
+            <h2>Registration Form</h2>
+            
+            <div id="success-message" class="success-message">
+                🎉 Registration successful! We'll contact you soon with more details.
+            </div>
+            
+            <div id="error-message" class="error-message">
+                ❌ There was an error submitting your registration. Please try again.
+            </div>
+
+            <form id="battle-registration-form" action="https://formspree.io/f/mldpygbo" method="POST">
+                <div class="form-group">
+                    <label for="stage-name">Stage Name / Crew Name <span class="required">*</span></label>
+                    <input type="text" id="stage-name" name="stage-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="battle-format">Battle Format <span class="required">*</span></label>
+                    <select id="battle-format" name="battle-format" required>
+                        <option value="">Select format</option>
+                        <option value="solo">Solo (1v1)</option>
+                        <option value="crew">Crew vs Crew</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contact-phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="contact-phone" name="contact-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="contact-email" name="contact-email" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="social-media">Social Media (Optional)</label>
+                    <input type="text" id="social-media" name="social-media" placeholder="Instagram, TikTok, YouTube, etc.">
+                </div>
+
+                <div class="form-group">
+                    <label for="additional-info">Additional Information (Optional)</label>
+                    <textarea id="additional-info" name="additional-info" rows="4" placeholder="Any additional details you'd like to share..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    🎭 Register for MoveToProve 2025
+                </button>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <footer style="text-align: center; padding: 40px 20px; border-top: 2px solid #ffffff; margin-top: 60px;">
+            <p style="color: #ffffff; font-size: 1em; margin-bottom: 10px;">
+                © 2025 UNI Freelancers Foundation | All Rights Reserved |
+            </p>
+            <p style="color: #ffffff; font-size: 1em;">
+                unifreelancerscompany@gmail.com
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('battle-registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const formData = new FormData(form);
+            const submitBtn = form.querySelector('.submit-btn');
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
+            
+            // Hide previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            // Show loading state
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    successMessage.style.display = 'block';
+                    form.reset();
+                    form.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                errorMessage.style.display = 'block';
+                form.scrollIntoView({ behavior: 'smooth' });
+            })
+            .finally(() => {
+                submitBtn.textContent = '🎭 Register for MoveToProve 2025';
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
